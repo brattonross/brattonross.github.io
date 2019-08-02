@@ -1,37 +1,15 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        brattonross.github.io
-      </h1>
-      <h2 class="subtitle">
-        Personal website
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h1 class="title">
+      brattonross.github.io
+    </h1>
+
+    <img class="dank-circle" src="../assets/pajaDank.png" />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 
 <style>
@@ -54,15 +32,22 @@ export default {
   letter-spacing: 1px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.dank-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.links {
-  padding-top: 15px;
+@keyframes spin {
+  from {
+    transform: rotate(0deg) translateX(25vh);
+  }
+  to {
+    transform: rotate(-360deg) translateX(25vh);
+  }
 }
 </style>
